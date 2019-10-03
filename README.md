@@ -9,29 +9,49 @@ Fork and clone this repo. On your fork, answer and commit the follow questions. 
 Create an array of strings called `colors` that contain "orange", "red", "yellow", "turquoise", and "lavender".
 
 Then, using array subscripting and string interpolation, print out the String `"orange, yellow, and lavender are some of my favorite colors"`.
-
+//
+var colors = ["Orange", "Red", "Yellow", "Turquoise", "Lavender"]
+print("\(colors[0]), \(colors[2]) and \(colors[4]) are some of my favorite colors")
 
 ## Question 2
 
 Remove "Illinois" and "Kansas" from the array below.
 
 `var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]`
-
+//
+westernStates.remove(at: westernStates.count - 1)
+westernStates.remove(at: westernStates.count - 1)
+print(westernStates)
 
 ## Question 3
 
 Iterate through the array below. For each state, print out the name of the state, a colon, and whether it is or is not **in the continental United States.**
 
 `let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]`
-
+//
+let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+for state in moreStates {
+    if state == moreStates[0] {
+        print("\(state): is not in the continental United States")
+    } else {
+        print("\(state): is in the continental United States")
+}
+}
 
 ## Question 4
 
 Print out how many non-whitespace characters are in `myString`:
 
 `let myString = "This is good practice with Strings!"`
+//
+var myString = "This is good practice with Strings!"
+print(myString.count)
+myString = myString.replacingOccurrences(of: " ", with: "")
+print(myString)
+print(myString.count)
 
 Iterate through the array below. For each sentence, print out how many non-whitespace characters are in it.
+
 
 `let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]`
 
@@ -56,7 +76,21 @@ The below array represents an unfinished batting lineup for a baseball team. **Y
 
 `var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]`
 
+//
+var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]
+battingLineup.append("Suzuki")
+print(battingLineup)
+battingLineup.remove(at: battingLineup.count - 8)
 
+print(battingLineup)
+battingLineup.append("Tejada")
+battingLineup.remove(at: battingLineup.count - 5)
+print(battingLineup)
+battingLineup.append("Guerrero")
+print(battingLineup)
+let element = battingLineup.remove(at: 0)
+battingLineup.insert(element, at: 7)
+print(battingLineup)
 ## Question 7
 
 Given an array of Ints, find out if it contains a target number.  
