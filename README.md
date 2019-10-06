@@ -54,6 +54,17 @@ Iterate through the array below. For each sentence, print out how many non-white
 
 
 `let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]`
+//
+var myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
+
+
+for(index, str) in myFavoriteQuotes.enumerated() {
+    myFavoriteQuotes[index] = str.replacingOccurrences(of: " ", with: "")
+}
+print(myFavoriteQuotes)
+for str in myFavoriteQuotes {
+    print(str.count)
+}
 
 
 ## Question 5
@@ -64,7 +75,27 @@ Iterate through `garden` and place any 🌷 that you find into the `basket`. Rep
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
 ```
+//
+var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
+var basket = [String]()
+for str in garden {
+    if str == "🌷" {
+        basket.append(str)
+    }
+}
+print(basket)
+Output: ["🌷", "🌷", "🌷", "🌷"]
 
+print(basket.count)
+Output: 4
+
+for _ in garden {
+    if let item = garden.firstIndex(of: "🌷") {
+        garden[item] = "dirt"
+}
+}
+print(garden)
+Output: ["dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt"]
 ## Question 6
 
 The below array represents an unfinished batting lineup for a baseball team. **You, the coach,** need to make some last minute changes:
@@ -123,7 +154,16 @@ target = 3
 
 //false
 ```
-
+//
+var numbers = [3, 8, 7, 2, 0, 7485, 748, 32]
+let target: Int = 32
+for num in numbers {
+    if num == target {
+        print(true)
+        } else {
+        print(false)
+        }
+}
 
 ## Question 8
 
@@ -152,6 +192,13 @@ let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int
 Iterate through `secondListOfNumbers`, and print out all the odd numbers.
 
 `var secondListOfNumbers = [19,13,14,19,101,10000,141,404]`
+//
+var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
+for myInt: Int in secondListOfNumbers {
+    if myInt % 2 == 1 {
+        print(myInt)
+    }
+}
 
 
 ## Question 11
@@ -159,14 +206,29 @@ Iterate through `secondListOfNumbers`, and print out all the odd numbers.
 Iterate through `thirdListOfNumbers`, and print out the sum.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
-
+//
+var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
+var sum = 0
+for num in secondListOfNumbers {
+    sum += num
+}
+print(sum)
+output: 10711
 
 ## Question 12
 
 Iterate through `thirdListOfNumbers`, and print out the sum of all the even numbers.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
-
+//
+var sumEven = 0
+for num in secondListOfNumbers {
+    if num % 2 == 0 {
+      sumEven += num
+}
+}
+print(sumEven)
+output: 10418
 
 ## Question 13
 
@@ -177,6 +239,22 @@ var listOne = [28, 64, 7, 96, 13, 32, 94, 11, 80, 68]
 var listTwo = [18, 94, 48, 6, 42, 68, 79, 76, 13, 7]
 var sharedElements = [Int]()
 ```
+//
+var listOne = [28, 64, 7, 96, 13, 32, 94, 11, 80, 68]
+var listTwo = [18, 94, 48, 6, 42, 68, 79, 76, 13, 7]
+var sharedElements = [Int]()
+for num1 in listOne {
+    for num2 in listTwo {
+        if num1 == num2 {
+            sharedElements.append(num1)
+        }
+    }
+}
+print(sharedElements)
+print("There are \(sharedElements.count) elements shared between 2 arrays")
+Output:
+[7, 13, 94, 68]
+There are 4 elements shared between 2 arrays
 
 # Part 2
 
